@@ -1,40 +1,81 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  </head>
-  <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<html lang="en"></html>
+<head>
 
     
 
 
 
 
-    <!-- Bootstrap CSS -->
+
+
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--Llamada libreria short -->
+    <!--<script src="https://raw.githubusercontent.com/mburst/dijkstras-algorithm/master/dijkstras.js"></script>-->
+    <script src="dijkstras.js"></script>
+    <title>Inicio</title>
+</head>
+<body onload="draw();">
+
+<div id="mynetwork"></div>
+<button type="button" onclick="createnetwork()">crear</button>
+<button type="button" onclick="destroy()">destruir</button>
+
+
+
+
+<div class="contentcaminomascorto">
+    <h2>Camino más corto</h2>
+    <p>Señala el camino mas corto entre dos Nodos</p>
+    <form name="form" method="get">
+      <p>Nodo incial
+        <input type="text" name="nodoI" />
+      <p>Nodo final
+      <input type="text" name="nodoF"  />
+      <p>Incendio en:
+        <input type="text" name="incendio" />
+      </p>
+      <p>Robo en:
+        <input type="text" name="robo" />
+      </p>
+      <p>Emergencia Medica en:
+        <input type="text" name="emergencia" />
+      </p>
+    </form>
+    <button id="caminomascorto" onclick="shortestPath(),resultadocaminomascorto();" style="margin: 10px;">Mostrar camino mas corto</button>
+    <p id="mostrarcaminomascorto"></p>
+    <button id="caminofuego" onclick="incendio(),resultadocaminofuego();" style="margin: 10px;">Mostrar incendio</button>
+    <p id="mostrarcaminoincendio"></p>
+    <button id="caminorobo" onclick="robo(),resultadocaminorobo();" style="margin: 10px;">Mostrar robo</button>
+    <p id="mostrarcaminorobo"></p>
+    <button id="caminoemergencia" onclick="emergencia(),resultadocaminoemergencia();" style="margin: 10px;">Mostrar emergencia</button>
+    <p id="mostrarcaminoemergencia"></p>
+    
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!--Css-->
     <link rel="stylesheet" href="style.css">
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-  </body>
-</html>
+    <!--Vis-->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="text/javascript" src="vis/dist/vis.js"></script>
+    <!--js-->
+    <script type="text/javascript" src="app.js"></script>
+    
+</body>
