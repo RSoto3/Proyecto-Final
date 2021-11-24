@@ -2,12 +2,6 @@
 <html lang="en"></html>
 <head>
 
-    
-
-
-
-
-
 
      <!-- Required meta tags -->
      <meta charset="utf-8">
@@ -17,43 +11,141 @@
     <script src="dijkstras.js"></script>
     <title>Inicio</title>
 </head>
+
+
 <body onload="draw();">
+<div id="introduccion" class="container">
 
-<div id="mynetwork"></div>
-<button type="button" onclick="createnetwork()">crear</button>
-<button type="button" onclick="destroy()">destruir</button>
+<div class="row">
+  <div class="col">
+    <h1>Tipos de familia</h1>
+    <h6>
+      La ID de cada Familia es el número que lo acompaña.
+      <br>
+      <br>
+      Tipo 1: Adulto 1
+      <br>
+      Tipo 2: Adulto 2
+      <br>
+      Tipo 3: Adulto 1 - Adulto 2
+      <br>
+      Tipo 4: Adulto 1 - Adulto 2 - Infante 1
+      <br>
+      Tipo 5: Adulto 1 - Adulto 2 - Infante 1 - Infante 2
+      <br>
+      Tipo 6: Adulto 1 - Adulto 2 - Infante 1 - Infante 2 - Infante 3
 
-
-
-
-<div class="contentcaminomascorto">
-    <h2>Camino más corto</h2>
-    <p>Señala el camino mas corto entre dos Nodos</p>
-    <form name="form" method="get">
-      <p>Nodo incial
-        <input type="text" name="nodoI" />
-      <p>Nodo final
-      <input type="text" name="nodoF"  />
-      <p>Incendio en:
-        <input type="text" name="incendio" />
-      </p>
-      <p>Robo en:
-        <input type="text" name="robo" />
-      </p>
-      <p>Emergencia Medica en:
-        <input type="text" name="emergencia" />
-      </p>
-    </form>
-    <button id="caminomascorto" onclick="shortestPath(),resultadocaminomascorto();" style="margin: 10px;">Mostrar camino mas corto</button>
-    <p id="mostrarcaminomascorto"></p>
-    <button id="caminofuego" onclick="incendio(),resultadocaminofuego();" style="margin: 10px;">Mostrar incendio</button>
-    <p id="mostrarcaminoincendio"></p>
-    <button id="caminorobo" onclick="robo(),resultadocaminorobo();" style="margin: 10px;">Mostrar robo</button>
-    <p id="mostrarcaminorobo"></p>
-    <button id="caminoemergencia" onclick="emergencia(),resultadocaminoemergencia();" style="margin: 10px;">Mostrar emergencia</button>
-    <p id="mostrarcaminoemergencia"></p>
-    
+    </h6>
   </div>
+
+  <div class="col">
+    <h1>Compañias Disponibles</h1>
+    <h6>
+      1)Hospital
+      <br>
+      2)Bomberos
+      <br>
+      3)Policia
+
+    </h6>
+  </div>
+  <div class="col">
+    
+    <h1> 
+      Indicaciones.
+    </h1>
+    <h6>
+      1) Para visualizar el grafo aleatorio debe clickear en crear.
+      <br>
+      2) Para Mostrar el camino mas corto debe ingresar un nodo inicial y un nodo final, ambas con sus respectivas ID.
+      <br>
+      3) Para Mostrar un incendio, debe elegir una familia que se encuentre en el grafo, ingrese la ID que la identifica en la casilla "INCENDIO EN".
+      <br>
+      4) Para mostrar un Robo, debe elegir una familia que se encuentre en el grafo, ingrese la ID que la identifica en la casilla "ROBO EN"
+      <br>
+      5) Para mostrar una emergencia, debe elegir una familia que se encuentre en el grafo, ingrese la ID que la identifica en la casilla "EMERGENCIA MEDICA EN"
+    </h6>
+
+  </div>
+  <div class="col">
+    <h1>Restricciones</h1>
+    <h6>
+      1) No se pueden colocar mas de una ID por casilla, si desea cambiar de ID, esta debera reemplazar la anterior.
+      <br>
+      2) La unica opción para interactuar entre compañias es "Mostrar camino mas corto".
+      <br>
+
+    </h6>
+  </div>
+
+  <div class="col">
+
+    <h1>Integrantes </h1>
+    <h6>  
+      1) Rodrigo Renato Soto Muñoz
+      <br>
+      2) Enzo Maximiliano Valle Mateluna
+      <br>
+      3) Karina Grissel Sánchez Pino
+      <br>
+      4) Diego Antonio Parisi Pantoja
+      <br>
+      5) Matías Ignacio Sánchez Muñoz
+    </h6>
+
+  </div>
+
+</div>
+
+</div>
+
+<h1>Proyecto N°2</h1>
+<div id="mynetwork"></div>
+<div id="botones">
+  <button id class="btn btn-secondary btn-lg btn-block"type="button" onclick="createnetwork()">crear</button>
+  <button class="btn btn-secondary btn-lg btn-block"type="button" onclick="destroy()">destruir</button>
+</div>
+
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Elegir</h3>
+      <div id="divelegir">
+        <form name="form" method="get">
+          <p class="btn btn-secondary btn-lg btn-block" id="botonesinicial">Nodo incial
+            <input type="text" name="nodoI" />
+          <p class="btn btn-secondary btn-lg btn-block" id="botonesinicial">Nodo final
+          <input type="text" name="nodoF"  />
+        </form>
+        <p class="btn btn-secondary btn-lg btn-block" id="elegir">Incendio en:
+          <input type="text" name="incendio" />
+        </p>
+        <p class="btn btn-secondary btn-lg btn-block" id="elegir">Robo en:
+          <input type="text" name="robo" />
+        </p>
+        <p class="btn btn-secondary btn-lg btn-block" id="elegir">Emergencia Medica en:
+          <input type="text" name="emergencia" />
+        </p> 
+        </div>
+        </div>
+        <div class="col">
+          <h3>Resultados</h3>
+      <button class="btn btn-secondary btn-lg btn-block" id="caminomascorto" onclick="shortestPath(),resultadocaminomascorto();">Mostrar camino mas corto</button>
+      <p id="mostrarcaminomascorto"></p> 
+      <button class="btn btn-secondary btn-lg btn-block" id="caminofuego" onclick="incendio(),resultadocaminofuego();" >Mostrar incendio</button>
+      <p id="mostrarcaminoincendio"></p>
+      <button class="btn btn-secondary btn-lg btn-block" id="caminorobo" onclick="robo(),resultadocaminorobo();" >Mostrar robo</button>
+      <p id="mostrarcaminorobo"></p>
+      <button class="btn btn-secondary btn-lg btn-block" id="caminoemergencia" onclick="emergencia(),resultadocaminoemergencia();">Mostrar emergencia</button>
+      <p id="mostrarcaminoemergencia"></p>
+      </div>
+      </div>
+
+
+
 
 
         

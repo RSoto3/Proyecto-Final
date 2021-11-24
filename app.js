@@ -18,7 +18,7 @@
     return JSON.stringify(obj, null, 4);
   }
 
-  
+  options.nodes= { color:'red'}
 
 
   function random(min,max){ //numero random de 5 a 10
@@ -32,11 +32,10 @@
     auxn= auxn+1; 
     nodes.add({
       id: auxn,
-      label: "Familia " + auxn +" "+ "Cod:" + aux1,
+      label: "Familia " + auxn +" "+ "Tipo:" + aux1,
       codigo:1
     });
     arrayIdVertices.push(auxn);
-    console.log("Se crean los nodos")
   }
 
   function bool(Nodo1,Nodo2){
@@ -161,7 +160,7 @@ function incendio() {
 
     fuego = g.shortestPath(i, f).concat(i).reverse();
   });
-  console.log(" Función camino más corto entre nodo " + nodoiaux + " y nodo " + nodofaux);
+  console.log(" Función camino incendio " + nodoiaux + " y nodo " + nodofaux);
 }
 
 function resultadocaminofuego() {
@@ -202,7 +201,7 @@ function robo() {
 
     atraco = g.shortestPath(i, f).concat(i).reverse();
   });
-  console.log(" Función camino más corto entre nodo " + nodoiaux + " y nodo " + nodofaux);
+  console.log(" Función camino más robo " + nodoiaux + " y nodo " + nodofaux);
 }
 
 function resultadocaminorobo() {
@@ -244,7 +243,7 @@ function emergencia() {
 
     ambulancia = g.shortestPath(i, f).concat(i).reverse();
   });
-  console.log(" Función camino más corto entre nodo " + nodoiaux + " y nodo " + nodofaux);
+  console.log(" Función camino emergencia " + nodoiaux + " y nodo " + nodofaux);
 }
 
 function resultadocaminoemergencia() {
@@ -294,24 +293,24 @@ function resultadocaminomascorto() {
 
 
 
-  
 
 
-
-  function createnetwork(){
+function createnetwork(){
+  if(arrayIdVertices.length==0){
     for(let i=0; i < Numnodos ;i=i+1){
-     // console.log(i);
-      addNode();
-    }
-    cantAris = (arrayIdVertices.length*(arrayIdVertices.length-1))/2;
-    for(let j=1; j <= arrayIdVertices.length; j=j+1){
-      addEdge(j,0.85);
-    }
-    crearservicios()
-    console.log(arrayIdVertices);
-    crearmatrizady();
-
+      // console.log(i);
+       addNode();
+     }
+     console.log("Se crean los nodos")
+     cantAris = (arrayIdVertices.length*(arrayIdVertices.length-1))/2;
+     for(let j=1; j <= arrayIdVertices.length; j=j+1){
+       addEdge(j,0.85);
+     }
+     crearservicios()
+     console.log(arrayIdVertices);
+     crearmatrizady();
   }
+}
 
   function destroy() {
     location.reload();
@@ -349,41 +348,6 @@ function resultadocaminomascorto() {
      console.log(matrizAdy);
   
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
