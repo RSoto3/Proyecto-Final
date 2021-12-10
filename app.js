@@ -366,3 +366,73 @@ function createnetwork(){
   }
   
 
+  function Nodoscamino(){
+    document.getElementById( "botonesinicial" ).style.display = 'block'; 
+    document.getElementById( "botonesfinal" ).style.display = 'block'; 
+    document.getElementById( "caminomascorto" ).style.display = 'block'; 
+    document.getElementById( "camporobo" ).style.display = 'none';
+    document.getElementById( "caminorobo" ).style.display = 'none'; 
+    document.getElementById( "campoemergencia" ).style.display = 'none';
+    document.getElementById( "caminoemergencia" ).style.display = 'none'; 
+    document.getElementById( "campoincendio" ).style.display = 'none';
+    document.getElementById( "caminofuego" ).style.display = 'none';
+    document.getElementById( "mostrarcaminomascorto" ).style.display = 'block';
+    document.getElementById( "mostrarcaminoincendio" ).style.display = 'none';
+    document.getElementById( "mostrarcaminorobo" ).style.display = 'none';
+    document.getElementById( "mostrarcaminoemergencia" ).style.display = 'none';
+  }
+
+  function opcionesincendio(){
+    document.getElementById( "BotonCamino" ).style.display = 'block'; 
+    document.getElementById( "campoincendio" ).style.display = 'block';
+    document.getElementById( "caminofuego" ).style.display = 'block';
+    document.getElementById( "botonesinicial" ).style.display = 'none'; 
+    document.getElementById( "botonesfinal" ).style.display = 'none'; 
+    document.getElementById( "caminomascorto" ).style.display = 'none'; 
+    document.getElementById( "camporobo" ).style.display = 'none';
+    document.getElementById( "caminorobo" ).style.display = 'none'; 
+    document.getElementById( "campoemergencia" ).style.display = 'none';
+    document.getElementById( "caminoemergencia" ).style.display = 'none';
+    document.getElementById( "mostrarcaminomascorto" ).style.display = 'none';
+    document.getElementById( "mostrarcaminoincendio" ).style.display = 'block';
+    document.getElementById( "mostrarcaminorobo" ).style.display = 'none';
+    document.getElementById( "mostrarcaminoemergencia" ).style.display = 'none';
+    
+  }
+  function opcionesrobo(){
+    document.getElementById( "BotonCamino" ).style.display = 'block'; 
+    document.getElementById( "camporobo" ).style.display = 'block';
+    document.getElementById( "caminorobo" ).style.display = 'block';
+    document.getElementById( "botonesinicial" ).style.display = 'none'; 
+    document.getElementById( "botonesfinal" ).style.display = 'none'; 
+    document.getElementById( "caminomascorto" ).style.display = 'none'; 
+    document.getElementById( "campoemergencia" ).style.display = 'none';
+    document.getElementById( "caminoemergencia" ).style.display = 'none';
+    document.getElementById( "campoincendio" ).style.display = 'none';
+    document.getElementById( "caminofuego" ).style.display = 'none';
+    document.getElementById( "mostrarcaminomascorto" ).style.display = 'none';
+    document.getElementById( "mostrarcaminoincendio" ).style.display = 'none';
+    document.getElementById( "mostrarcaminorobo" ).style.display = 'block';
+    document.getElementById( "mostrarcaminoemergencia" ).style.display = 'none';
+    
+    
+  }
+  function opcionesemergencia(){
+    document.getElementById( "BotonCamino" ).style.display = 'block'; 
+    document.getElementById( "campoemergencia" ).style.display = 'block';
+    document.getElementById( "caminoemergencia" ).style.display = 'block';
+    document.getElementById( "botonesinicial" ).style.display = 'none'; 
+    document.getElementById( "botonesfinal" ).style.display = 'none'; 
+    document.getElementById( "caminomascorto" ).style.display = 'none';
+    document.getElementById( "campoincendio" ).style.display = 'none';
+    document.getElementById( "caminofuego" ).style.display = 'none'; 
+    document.getElementById( "camporobo" ).style.display = 'none';
+    document.getElementById( "caminorobo" ).style.display = 'none';
+    document.getElementById( "mostrarcaminomascorto" ).style.display = 'none';
+    document.getElementById( "mostrarcaminoincendio" ).style.display = 'none';
+    document.getElementById( "mostrarcaminorobo" ).style.display = 'none';
+    document.getElementById( "mostrarcaminoemergencia" ).style.display = 'block';
+    
+  }
+
+  

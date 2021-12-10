@@ -1,15 +1,26 @@
 <!doctype html>
 <html lang="en"></html>
 <head>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <!--Css-->
+  <link rel="stylesheet" href="style.css">
+  <!-- Optional JavaScript; choose one of the two! -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+  <!--Vis-->
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script type="text/javascript" src="vis/dist/vis.js"></script>
+  <!--js-->
+  <script type="text/javascript" src="app.js"></script>
 
 
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--Llamada libreria short -->
-    <!--<script src="https://raw.githubusercontent.com/mburst/dijkstras-algorithm/master/dijkstras.js"></script>-->
-    <script src="dijkstras.js"></script>
-    <title>Inicio</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Llamada libreria short -->
+<!--<script src="https://raw.githubusercontent.com/mburst/dijkstras-algorithm/master/dijkstras.js"></script>-->
+<script src="dijkstras.js"></script>
+<title>Inicio</title>
 </head>
 
 
@@ -109,41 +120,42 @@
 
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h3>Elegir</h3>
-      <div id="divelegir">
-        <form name="form" method="get">
-          <p class="btn btn-secondary btn-lg btn-block" id="botonesinicial">Nodo incial
-            <input type="text" name="nodoI" />
-          <p class="btn btn-secondary btn-lg btn-block" id="botonesinicial">Nodo final
-          <input type="text" name="nodoF"  />
-        </form>
-        <p class="btn btn-secondary btn-lg btn-block" id="elegir">Incendio en:
-          <input type="text" name="incendio" />
-        </p>
-        <p class="btn btn-secondary btn-lg btn-block" id="elegir">Robo en:
-          <input type="text" name="robo" />
-        </p>
-        <p class="btn btn-secondary btn-lg btn-block" id="elegir">Emergencia Medica en:
-          <input type="text" name="emergencia" />
-        </p> 
-        </div>
-        </div>
-        <div class="col">
-          <h3>Resultados</h3>
-      <button class="btn btn-secondary btn-lg btn-block" id="caminomascorto" onclick="shortestPath(),resultadocaminomascorto();">Mostrar camino mas corto</button>
-      <p id="mostrarcaminomascorto"></p> 
-      <button class="btn btn-secondary btn-lg btn-block" id="caminofuego" onclick="incendio(),resultadocaminofuego();" >Mostrar incendio</button>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Funciones</h3>
+      <button class="btn btn-secondary btn-lg btn-block" id="BotonCamino" onclick="Nodoscamino();">Encontrar camino mas corto</button>
+      <form name="form" method="get">
+        <p class="btn btn-secondary btn-lg btn-block" id="botonesinicial" style="display:none;">Nodo incial:
+        <input type="text" name="nodoI" /></p>
+        <p class="btn btn-secondary btn-lg btn-block" id="botonesfinal" style="display:none;">Nodo final:
+        <input type="text" name="nodoF"  /></p>
+        <button class="btn btn-secondary btn-lg btn-block" id="caminomascorto" type="button" onclick="shortestPath(),resultadocaminomascorto();" style="display:none;">Calcular</button>
+        <p id="mostrarcaminomascorto"></p> 
+      </form>
+      <button class="btn btn-secondary btn-lg btn-block" id="BotonCamino" onclick="opcionesincendio();">Simular Incendio</button>
+      <p class="btn btn-secondary btn-lg btn-block" id="campoincendio" style="display:none;">ID Familia:
+        <input type="text" name="incendio" />
+      </p>
+      <button class="btn btn-secondary btn-lg btn-block" id="caminofuego" type="button" onclick="incendio(),resultadocaminofuego();" style="display:none;" >Calcular</button>
       <p id="mostrarcaminoincendio"></p>
-      <button class="btn btn-secondary btn-lg btn-block" id="caminorobo" onclick="robo(),resultadocaminorobo();" >Mostrar robo</button>
-      <p id="mostrarcaminorobo"></p>
-      <button class="btn btn-secondary btn-lg btn-block" id="caminoemergencia" onclick="emergencia(),resultadocaminoemergencia();">Mostrar emergencia</button>
-      <p id="mostrarcaminoemergencia"></p>
-      </div>
-      </div>
 
+      <button class="btn btn-secondary btn-lg btn-block" id="BotonCamino" onclick="opcionesrobo();">Simular Robo</button>
+      <p class="btn btn-secondary btn-lg btn-block" id="camporobo" style="display:none;">ID Familia:
+        <input type="text" name="robo" />
+      </p>
+      <button class="btn btn-secondary btn-lg btn-block" id="caminorobo" type="button" onclick="robo(),resultadocaminorobo();" style="display:none;">Calcular</button>
+      <p id="mostrarcaminorobo"></p>
+
+      <button class="btn btn-secondary btn-lg btn-block" id="BotonCamino" onclick="opcionesemergencia();">Simular Emergencia</button>
+      <p class="btn btn-secondary btn-lg btn-block" id="campoemergencia" style="display:none;">ID Familia:
+        <input type="text" name="emergencia" />
+      </p>
+      <button class="btn btn-secondary btn-lg btn-block" id="caminoemergencia" type="button" onclick="emergencia(),resultadocaminoemergencia();" style="display:none;" >Calcular</button>
+      <p id="mostrarcaminoemergencia"></p>
+    </div>
+  </div>
+</div>
 
 
 
@@ -158,16 +170,6 @@
 
 
 
-<!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <!--Css-->
-    <link rel="stylesheet" href="style.css">
-    <!-- Optional JavaScript; choose one of the two! -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <!--Vis-->
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <script type="text/javascript" src="vis/dist/vis.js"></script>
-    <!--js-->
-    <script type="text/javascript" src="app.js"></script>
+
     
 </body>
